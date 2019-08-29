@@ -5,6 +5,7 @@ namespace GRVL
     {
         public BookModel()
         {
+
         }
     }
 }
