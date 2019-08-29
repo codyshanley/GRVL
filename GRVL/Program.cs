@@ -6,32 +6,39 @@ namespace GRVL
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Grand Rapids Virtual Library!");
-            Console.WriteLine("What would you like to do? (Please enter a number)\n");
-            Console.WriteLine("1. Display book list");
-            Console.WriteLine("2. Search by title");
-            Console.WriteLine("3. Search by author");
+            BookSearcher bs = new BookSearcher();
+            BookModel bm = new BookModel();
 
-            string choice = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("Welcome to the Grand Rapids Virtual Library!");
+                Console.WriteLine("What would you like to do? (Please enter a number)\n");
+                Console.WriteLine("1. Display book list");
+                Console.WriteLine("2. Search by title");
+                Console.WriteLine("3. Search by author");
 
-            if (choice == "1")
-            {
-                //display book list
-            }
-            else if (choice == "2")
-            {
-                //search by title
-            }
-            else if (choice == "3")
-            {
-                //search by author
-            }
-            else
-            {
+                string choice = Console.ReadLine();
 
+                if (choice == "1")
+                {
+                    foreach (Book book in bm.booklist)
+                    {
+                        Console.WriteLine($"\n{book.Title}\t{book.Author}\n{book.Status}");
+                    }
+                }
+                else if (choice == "2")
+                {
+                    bs.SearchByTitle();
+                }
+                else if (choice == "3")
+                {
+                    bs.SearchByAuthor();
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid response");
+                }
             }
-
-            
         }
     }
 }
