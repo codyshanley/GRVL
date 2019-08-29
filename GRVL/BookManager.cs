@@ -5,9 +5,6 @@ namespace GRVL
 {
     public class BookManager
     {
-        public BookManager()
-        {
-        }
         public string Checkout(Book book)
         {
             book.DueDate = DateTime.Now.AddDays(14);
