@@ -32,6 +32,7 @@ namespace GRVL
                         Console.WriteLine($"{i}. {book.Title}, {book.Author}, {book.Status}");
                         i++;
                     }
+
                     Console.WriteLine();
                 }
                 else if (choice == "2")
