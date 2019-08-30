@@ -19,7 +19,7 @@ namespace GRVL
                 i++;
             }
 
-            Console.WriteLine("\nWhat book number do you watn to checkout");
+            Console.WriteLine("\nWhat book number do you want to checkout");
             string answer = Console.ReadLine();
             int input = int.Parse(answer);
 
