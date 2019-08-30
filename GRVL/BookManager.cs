@@ -5,17 +5,23 @@ namespace GRVL
 {
     public class BookManager
     {
-        public string Checkout(Book book)
+        public void Checkout()
         {
-            book.DueDate = DateTime.Now.AddDays(14);
-            book.Status = "Checked out";
-            return ($"Thanks for checking out {book.Title}. {book.Title} is due back {book.DueDate}");
+            Console.WriteLine("What book number do you watn to checkout");
+            string answer = Console.ReadLine();
+            int input = int.Parse(answer);
+
+            BookModel book = new BookModel();
+
+            book.booklist[input].DueDate = DateTime.Now.AddDays(14);
+            book.booklist[input].Status = "Checked out";
+            Console.WriteLine($"Thanks for checking out {book.booklist[input].Title}. {book.booklist[input].Title} is due back {book.booklist[input].DueDate}");
         }
 
-        public string ReturnBook(Book book)
+        public void ReturnBook(Book book)
         {
             book.Status = "Available";
-            return ($"Thanks for returning {book.Title}");
+            Console.WriteLine($"Thanks for returning {book.Title}");
         }
     }
 }
