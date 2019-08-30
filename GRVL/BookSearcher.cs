@@ -16,15 +16,6 @@ namespace GRVL
                 {
                     Console.WriteLine($"We found these titles matching your search");
                     Console.WriteLine($"{book.Author}\t{book.Title}\t{book.Status}\n");
-
-                    Console.WriteLine("Would you like to check out this book y/n?");
-                    string answer = Console.ReadLine().ToLower().Trim();
-
-                    if (answer == "y")
-                    {
-                        BookManager BMan = new BookManager();
-                        BMan.Checkout(book);
-                    }
                 }
             }
         }
