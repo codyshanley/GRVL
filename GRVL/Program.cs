@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace GRVL
 {
@@ -6,32 +7,52 @@ namespace GRVL
     {
         static void Main(string[] args)
         {
+            BookSearcher bs = new BookSearcher();
+            BookModel bm = new BookModel();
+
             Console.WriteLine("Welcome to the Grand Rapids Virtual Library!");
-            Console.WriteLine("What would you like to do? (Please enter a number)\n");
-            Console.WriteLine("1. Display book list");
-            Console.WriteLine("2. Search by title");
-            Console.WriteLine("3. Search by author");
 
-            string choice = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("What would you like to do? (Please enter a number)\n");
+                Console.WriteLine("1. Display book list");
+                Console.WriteLine("2. Search by title");
+                Console.WriteLine("3. Search by author");
+                Console.WriteLine("4. Quit\n");
 
-            if (choice == "1")
-            {
-                //display book list
-            }
-            else if (choice == "2")
-            {
-                //search by title
-            }
-            else if (choice == "3")
-            {
-                //search by author
-            }
-            else
-            {
+                string choice = Console.ReadLine();
+                Console.WriteLine();
 
-            }
+                if (choice == "1")
+                {
+                    int i = 0;
+                    foreach (Book book in bm.booklist)
+                    {
+                        Thread.Sleep(40);
+                        Console.WriteLine($"{i}. {book.Title}, {book.Author}, {book.Status}");
+                        i++;
+                    }
 
-            
+                    Console.WriteLine();
+                }
+                else if (choice == "2")
+                {
+                    bs.SearchByTitle();
+                }
+                else if (choice == "3")
+                {
+                    bs.SearchByAuthor();
+                }
+                else if (choice == "4")
+                {
+                    Console.WriteLine("Thanks for visiting the GRVL!");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid response");
+                }
+            }
         }
     }
 }
