@@ -18,7 +18,9 @@ namespace GRVL
                 Console.WriteLine("1. Display book list");
                 Console.WriteLine("2. Search by title");
                 Console.WriteLine("3. Search by author");
-                Console.WriteLine("4. Quit\n");
+                Console.WriteLine("4. Check in book");
+                Console.WriteLine("5. Check out book");
+                Console.WriteLine("6. Quit\n");
 
                 string choice = Console.ReadLine();
                 Console.WriteLine();
@@ -43,7 +45,17 @@ namespace GRVL
                 {
                     bs.SearchByAuthor();
                 }
+
                 else if (choice == "4")
+                {
+                    //check in
+                }
+
+                else if (choice == "5")
+                {
+                    //checkout
+                }
+                else if (choice == "6")
                 {
                     Console.WriteLine("Thanks for visiting the GRVL!");
                     break;
