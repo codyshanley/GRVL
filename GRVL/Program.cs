@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Collections;
 
 namespace GRVL
 {
@@ -9,19 +10,22 @@ namespace GRVL
         {
             BookSearcher bs = new BookSearcher();
             BookModel bm = new BookModel();
+            BookManager bman = new BookManager();
 
             Console.WriteLine("Welcome to the Grand Rapids Virtual Library!");
 
             while (true)
             {
                 Console.WriteLine("What would you like to do? (Please enter a number)\n");
-                Console.WriteLine("1. Display book list");
-                Console.WriteLine("2. Search by title");
-                Console.WriteLine("3. Search by author");
+                Console.WriteLine("1. Display book list\n");
+                Console.WriteLine("2. Search by title\n");
+                Console.WriteLine("3. Search by author\n");
+                Console.WriteLine("4. Checkout a book\n");
+                Console.WriteLine("5. Return a book\n");
                 Console.WriteLine("4. Quit\n");
 
                 string choice = Console.ReadLine();
-                Console.WriteLine();
+                Console.Clear();
 
                 if (choice == "1")
                 {
@@ -44,6 +48,16 @@ namespace GRVL
                     bs.SearchByAuthor();
                 }
                 else if (choice == "4")
+                {
+                    bman.Checkout();
+                }
+
+                else if (choice == "5")
+                {
+                    bman.ReturnBook();
+                }
+
+                else if (choice == "6")
                 {
                     Console.WriteLine("Thanks for visiting the GRVL!");
                     break;
