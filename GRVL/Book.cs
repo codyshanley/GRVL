@@ -6,9 +6,9 @@ namespace GRVL
 {
     public class Book
     {
-        public string Title;
-        public string Author;
-        public string Status;
+        public string Title { get; }
+        public string Author { get; }
+        public string Status { get; set; }
         public DateTime DueDate = DateTime.Now;
 
         public Book(string title, string author, string status )
